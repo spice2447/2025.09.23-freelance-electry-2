@@ -1,0 +1,673 @@
+/* ============ ОСНОВНЫЕ СТИЛИ ФУТЕРА ============ */
+
+/* Главный контейнер футера */
+.footer {
+  background-color: #f8f9f8;
+  background-image: url(https://cdn.prod.website-files.com/6737524e57a558bf6c0d64ef/67a6472b37190cb11696b819_6745bbec188ff3dc8f2b721c_%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B01.avif);
+  background-position: 50%;
+  background-size: auto 102%;
+  padding-top: 55px;
+  padding-bottom: 46px;
+  position: relative;
+}
+
+.footer.product_footer {
+  background-color: #f8f9f8;
+  background-image: url(https://cdn.prod.website-files.com/6737524e57a558bf6c0d64ef/67a6472b37190cb11696b819_6745bbec188ff3dc8f2b721c_%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B01.avif);
+  background-position: 50%;
+  background-size: auto 102%;
+  padding-bottom: 200px;
+}
+
+/* Контейнер */
+.footer_container {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 66px;
+  padding-right: 66px;
+  margin: 0 auto;
+}
+
+/* FAQ секция */
+.faq_questions {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 210px;
+}
+
+.faq_que_text {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.faq_head {
+  margin: 0;
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 44px;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(180deg, #fff, #c3c3c3);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.technology_desc_2 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 124%;
+  color: #666;
+  text-align: center;
+}
+
+/* Форма */
+.form-block {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 470px;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.text-field,
+.text-field-2 {
+  color: #000;
+  border: 1px solid #ebebeb;
+  border-radius: 40px;
+  width: 100%;
+  height: 52px;
+  margin-bottom: 0;
+  padding: 15px 16px;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  box-shadow: 0 0 10px #0000000d;
+}
+
+.submit-button {
+  color: #fff;
+  background-image: linear-gradient(90deg, #2859e6, #5279e8);
+  border-radius: 40px;
+  height: 52px;
+  max-width: 200px;
+  padding: 0 38px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-image: linear-gradient(90deg, #ff6116, #f49364);
+}
+
+/* Чекбокс */
+.w-checkbox {
+  display: flex;
+  align-items: start;
+  margin-top: 5px;
+}
+
+.checkbox-label {
+  max-width: 400px;
+  color: #666;
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  line-height: 16px;
+  margin-left: 8px;
+}
+
+.link-2 {
+  color: #666;
+  text-decoration: underline;
+}
+
+/* Сообщения формы */
+.success-message,
+.w-form-done {
+  display: none;
+  text-align: center;
+  background-color: #ddd0;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.error-message,
+.w-form-fail {
+  display: none;
+  background-color: #ffb6b6;
+  border-radius: 50px;
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+
+/* Заголовок */
+.footer_header {
+  margin: 0;
+  margin-bottom: 62px;
+  font-family: Inter, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 100%;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(180deg, #f5f9fc, #cacaca);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Информационная сетка */
+.footer_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  width: 100%;
+  max-width: 1060px;
+}
+
+/* Левая колонка */
+.footer_column {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer_wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.footer_text_heading {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 124%;
+  color: #f8f9f880;
+  text-transform: uppercase;
+}
+
+.footer_text2 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  line-height: 124%;
+  color: #f8f9f8;
+}
+
+.footer_btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #3858b1;
+  border-radius: 30px;
+  margin-top: 6px;
+  padding: 8px 10px;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+/* Средняя колонка (адрес) */
+.footer_column_adress {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.footer_wrapper_adress {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 30px;
+  position: relative;
+}
+
+.footer_text_adress {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 124%;
+  color: #f8f9f880;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+}
+
+.footer_text3 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 124%;
+  color: #f8f9f8;
+  text-align: left;
+}
+
+.footer_wrapper_sm {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  margin-bottom: 60px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.footer_text1 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 124%;
+  color: #f8f9f880;
+  text-transform: uppercase;
+}
+
+.footer_links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* Правая колонка (контакты) */
+.footer_column_contacts {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.footer_wrapper_contacts {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.footer_text4 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 105%;
+  color: #f8f9f8;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer_text5 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 124%;
+  color: #f8f9f8;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ============ FOOTER-MENU (нижняя часть) ============ */
+
+.footer-menu {
+  background-color: #131417;
+  background-image: radial-gradient(circle at 50% 100%, #2859e633, #fff0 39%);
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 55px;
+  padding-bottom: 46px;
+  position: relative;
+}
+
+.footer-menu_line {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0.6px;
+  opacity: 0.5;
+  background-image: linear-gradient(90deg, #0000, #999 50%, #9990);
+}
+
+.footer-menu_container {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 66px;
+  padding-right: 66px;
+  gap: 32px;
+}
+
+.footer-menu_up {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+/* Навигация */
+.footer_navigation {
+  display: flex;
+  gap: 3px;
+}
+
+.header_link_text {
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Меню ссылок */
+.footer_menu {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 6px 16px;
+}
+
+.footer_text6 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 105%;
+  color: #fff9;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Логотип */
+.footer_logo {
+  max-width: 100%;
+  margin: 32px 0;
+}
+
+/* Политика и копирайт */
+.footer_policy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer_text9 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 124%;
+  color: #f8f9f880;
+}
+
+.footer_text7,
+.footer_text8 {
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 105%;
+  color: #fff9;
+  cursor: pointer;
+  text-decoration: none;
+  width: 15%;
+}
+
+.footer_text7 {
+  text-align: right;
+}
+
+/* Кнопка вверх */
+.footer_menu_link_up {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer-menu_link_img {
+  max-width: 100%;
+}
+
+/* ============ МЕДИА-ЗАПРОСЫ ============ */
+
+/* Tablet (до 991px) */
+@media screen and (max-width: 991px) {
+  .footer_container,
+  .footer-menu_container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .footer_header {
+    font-size: 38px;
+  }
+
+  .footer_info {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .footer-menu_up {
+    flex-flow: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .footer_menu {
+    grid-template-columns: 1fr;
+  }
+
+  .footer_policy {
+    flex-flow: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer_text7 {
+    text-align: center;
+  }
+}
+
+/* Mobile (до 767px) */
+@media screen and (max-width: 767px) {
+  .footer {
+    padding-bottom: 100px;
+  }
+
+  .footer.product_footer {
+    padding-bottom: 150px;
+  }
+
+  .footer_container,
+  .footer-menu_container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .faq_questions {
+    margin-bottom: 120px;
+  }
+
+  .faq_head {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .footer_header {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .footer_info {
+    gap: 32px;
+  }
+
+  .footer_text4 {
+    font-size: 26px;
+  }
+
+  .footer_text5 {
+    font-size: 20px;
+  }
+
+  /* Footer Menu */
+  .footer-menu_up {
+    gap: 32px;
+  }
+
+  .footer_navigation {
+    flex-flow: wrap;
+    justify-content: center;
+  }
+
+  .footer_menu {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .footer_logo {
+    margin: 24px 0;
+  }
+
+  .footer_policy {
+    gap: 8px;
+  }
+
+  .footer_text9 {
+    font-size: 10px;
+  }
+
+  .footer_text7,
+  .footer_text8 {
+    font-size: 10px;
+    width: auto;
+  }
+}
+
+/* Extra Small Mobile (до 479px) */
+@media screen and (max-width: 479px) {
+  .footer_container,
+  .footer-menu_container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .faq_head {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .technology_desc_2 {
+    font-size: 12px;
+  }
+
+  .text-field,
+  .text-field-2 {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .footer_header {
+    font-size: 24px;
+    line-height: 120%;
+  }
+
+  .footer_text_heading,
+  .footer_text1,
+  .footer_text_adress {
+    font-size: 10px;
+  }
+
+  .footer_text2,
+  .footer_text3 {
+    font-size: 14px;
+  }
+
+  .footer_btn {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .footer_text4 {
+    font-size: 22px;
+  }
+
+  .footer_text5 {
+    font-size: 16px;
+  }
+
+  /* Footer Menu */
+  .footer-menu_up {
+    gap: 24px;
+  }
+
+  .header_link_text {
+    font-size: 12px;
+  }
+
+  .footer_text6 {
+    font-size: 10px;
+  }
+
+  .footer_policy {
+    gap: 6px;
+  }
+
+  .footer_text9,
+  .footer_text7,
+  .footer_text8 {
+    font-size: 9px;
+  }
+}

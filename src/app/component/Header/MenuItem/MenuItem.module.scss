@@ -1,0 +1,51 @@
+@import "@/app/_variables.scss";
+@import "@/app/_functions";
+
+.headerMenuItem {
+  &Top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: scale(5);
+  }
+
+  &Down {
+    overflow: hidden;
+    margin-top: scale(12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: scale(8);
+    max-height: 0px;
+    transition: 230ms ease-in-out max-height;
+
+    &Active {
+      max-height: scale(100);
+    }
+  }
+
+  &Text {
+    font-weight: 500;
+    font-size: scale(16);
+    line-height: 124%;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &SubText {
+    opacity: .6;
+    font-weight: 500;
+    font-size: scale(14);
+    line-height: 124%;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &Icon {
+    width: scale(8);
+    height: scale(4);
+    transition: 230ms ease-in-out transform;
+
+    &Active {
+      transform: rotate(-180deg);
+    }
+  }
+}
