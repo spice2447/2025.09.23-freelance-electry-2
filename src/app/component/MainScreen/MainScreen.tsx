@@ -12,6 +12,8 @@ const MainScreen = () => {
   const handleOpenPopup = () => {
     setActivePopap(!activePopap);
   }
+
+  
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute inset-y-0 left-0 right-0 lg:left-[3.75%] lg:right-[3.75%] -z-10">

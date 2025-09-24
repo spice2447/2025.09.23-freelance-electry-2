@@ -75,7 +75,7 @@ export default function Footer() {
           </p>
         </div>
         {/* 4. Оборачиваем инпуты в тег <form> и добавляем onSubmit */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-1.5 mt-6 lg:flex-row ">
+        <form id="footer_form" onSubmit={handleSubmit} className="flex flex-col gap-1.5 mt-6 lg:flex-row ">
           <input
             className="text-black/60 border bg-[#F8F9F8] border-[#ebebeb] rounded-[24px] w-full h-[52px] p-4 text-[14px]"
             maxLength={256}
