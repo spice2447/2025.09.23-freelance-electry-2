@@ -1,11 +1,17 @@
 "use client";
 import React, { useState } from "react"; // 1. Импортируем useState
 import Image from "next/image";
+import { usePopup } from "@/context/PopapContext";
 
 const MainScreen = () => {
   // 2. Создаем состояние для отслеживания загрузки
   const [isLoading, setIsLoading] = useState(true);
+    const { activePopap, setActivePopap } = usePopup();
 
+
+  const handleOpenPopup = () => {
+    setActivePopap(!activePopap);
+  }
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute inset-y-0 left-0 right-0 lg:left-[3.75%] lg:right-[3.75%] -z-10">
@@ -48,7 +54,7 @@ const MainScreen = () => {
                 <h1 className="px-4 text-center text-[26px] font-medium leading-[1.15] text-white lg:px-0 lg:text-start lg:text-[52px]">
                   Ищете альтернативу генератору или ИБП?
                 </h1>
-                <button className="h-[52px] flex justify-center items-center w-fit rounded-[24px] border-0 bg-gradient-to-r from-[#2859e6] to-[#5279e8] p-4 text-[16px] font-medium text-white transition-colors duration-200 hover:bg-gradient-to-r hover:from-[#ff6116] hover:to-[#f49364]">
+                <button onClick={handleOpenPopup} className="h-[52px] flex justify-center items-center w-fit rounded-[24px] border-0 bg-gradient-to-r from-[#2859e6] to-[#5279e8] p-4 text-[16px] font-medium text-white transition-colors duration-200 hover:bg-gradient-to-r hover:from-[#ff6116] hover:to-[#f49364]">
                   Заказать консультацию
                 </button>
               </div>

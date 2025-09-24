@@ -5,6 +5,7 @@ import MainSlide from "./component/MainSlide/MainSlide";
 import MainScreen from "./component/MainScreen/MainScreen";
 import Navbar from "@/components/Navbar";
 import { Header } from "./component/Header/Header";
+import Popup from "@/components/Popup";
 
 export default function Home() {
   
@@ -12,6 +13,9 @@ export default function Home() {
     <>
       <Navbar />
       <Header />
+
+    <Popup/>
+
       <MainScreen />
       <MainSlide />
       <div className="flex flex-col gap-20 lg:gap-35 py-15 max-w-[1180px] m-auto">
