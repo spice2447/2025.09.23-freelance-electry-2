@@ -24,14 +24,14 @@ const feedbackData: FeedbackItemProps[] = [
   
   {
     id: 2,
-    videoUrl: "https://example.com/another-video.mp4", // Пример с прямой ссылкой на mp4
+    videoUrl: "video_review_2.mp4", // Пример с прямой ссылкой на mp4
     posterImgSrc: "/placeholder-video-poster.png",
     date: "25.11.2024",
     title: "Видеообзор: Установка системы Volts в офисе",
   },
   {
     id: 3,
-    videoUrl: "https://example.com/third-video.mp4",
+    videoUrl: "video_review_3.mp4",
     posterImgSrc: "/placeholder-video-poster.png",
     date: "01.10.2024",
     title: "Интервью: Эксперты о решениях Volts",
