@@ -32,7 +32,7 @@ export default function Navbar() {
   useEffect(() => {
     const timer = setTimeout(() => {
       calculateButtonRef.current?.click();
-    }, 5000); 
+    }, 120*1000); 
 
     return () => clearTimeout(timer);
   }, []); 
