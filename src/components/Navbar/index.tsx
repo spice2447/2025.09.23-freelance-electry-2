@@ -31,32 +31,61 @@ export default function Navbar() {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   // Данные для навигации
-  const navLinks = {
+  // const navLinks = {
+  //   drives: [
+  //     { href: "/house", label: "Для загородного дома" },
+  //     { href: "/", label: "Для квартиры" },
+  //     { href: "/", label: "Для дачи" },
+  //     { href: "/", label: "Автономные решения" },
+  //   ],
+  //   main: [
+  //     { href: "/features", label: "Характеристики" },
+  //     { href: "/catalog", label: "Каталог" },
+  //     { href: "/all-projects", label: "Наши проекты" },
+  //     { href: "/reviews", label: "Отзывы" },
+  //   ],
+  //   implementation: [
+  //     { href: "/company/oplata-i-dostavka", label: "Оплата и доставка" },
+  //     { href: "/guarantee", label: "Гарантии" },
+  //     { href: "/ibp", label: "Сравнение с ИБП" },
+  //     { href: "/generator", label: "Сравнение с генератором" },
+  //     { href: "/calculator", label: "Калькулятор" },
+  //   ],
+  //   company: [
+  //     { href: "/about-us", label: "О нас" },
+  //     { href: "/smi-o-nas", label: "СМИ о нас" },
+  //     { href: "/statii", label: "Статьи" },
+  //     { href: "/vacancies", label: "Вакансии" },
+  //     { href: "/agent", label: "Стать агентом" },
+  //   ],
+  // };
+
+    const navLinks = {
     drives: [
-      { href: "/house", label: "Для загородного дома" },
-      { href: "/apartment", label: "Для квартиры" },
-      { href: "/cottage", label: "Для дачи" },
-      { href: "/solar-station", label: "Автономные решения" },
+      { href: "https://voltsbattery.ru", label: "Для загородного дома" },
+      { href: "https://voltsbattery.ru", label: "Для квартиры" },
+      { href: "https://voltsbattery.ru", label: "Для дачи" },
+      { href: "https://voltsbattery.ru", label: "Автономные решения" },
     ],
     main: [
-      { href: "/features", label: "Характеристики" },
-      { href: "/catalog", label: "Каталог" },
-      { href: "/all-projects", label: "Наши проекты" },
-      { href: "/reviews", label: "Отзывы" },
+      { href: "https://voltsbattery.ru", label: "Характеристики" },
+      { href: "https://voltsbattery.ru", label: "Каталог" },
+      { href: "https://voltsbattery.ru", label: "Наши проекты" },
+      { href: "https://voltsbattery.ru", label: "Отзывы" },
     ],
     implementation: [
-      { href: "/company/oplata-i-dostavka", label: "Оплата и доставка" },
-      { href: "/guarantee", label: "Гарантии" },
-      { href: "/ibp", label: "Сравнение с ИБП" },
-      { href: "/generator", label: "Сравнение с генератором" },
-      { href: "/calculator", label: "Калькулятор" },
+      { href: "https://voltsbattery.ru", label: "Оплата и доставка" },
+      { href: "https://voltsbattery.ru", label: "Гарантии" },
+      { href: "https://voltsbattery.ru", label: "Сравнение с ИБП" },
+      { href: "https://voltsbattery.ru", label: "Сравнение с генератором" },
+      { href: "https://voltsbattery.ru", label: "Калькулятор" },
     ],
     company: [
-      { href: "/about-us", label: "О нас" },
-      { href: "/smi-o-nas", label: "СМИ о нас" },
-      { href: "/statii", label: "Статьи" },
-      { href: "/vacancies", label: "Вакансии" },
-      { href: "/agent", label: "Стать агентом" },
+      { href: "https://voltsbattery.ru", label: "О нас" },
+      { href: "https://voltsbattery.ru", label: "СМИ о нас" },
+      { href: "https://voltsbattery.ru", label: "Статьи" },
+      { href: "https://voltsbattery.ru", label: "Вакансии" },
+      { href: "https://voltsbattery.ru", label: "Стать агентом" },
     ],
   };
 
@@ -98,9 +127,16 @@ export default function Navbar() {
               {navLinks.company.map(link => <DropdownLink key={link.href} href={link.href}>{link.label}</DropdownLink>)}
             </NavDropdown>
             <a href="tel:88007079046" className="text-sm font-medium text-white/80 hover:text-white transition-colors whitespace-nowrap">8 (800) 707-90-46</a>
-            <Link href="#calculate" className="text-white text-sm font-bold py-2 px-3 rounded-full transition-all duration-300 bg-gradient-to-r from-[#FF6217] to-[#F59465] hover:shadow-lg hover:shadow-orange-500/30">
+            {/* <a href="#popup:marquiz_68bc138ede46c100197a6379" className="text-white text-sm font-bold py-2 px-3 rounded-full transition-all duration-300 bg-gradient-to-r from-[#FF6217] to-[#F59465] hover:shadow-lg hover:shadow-orange-500/30">
               Рассчитать
-            </Link>
+            </a> */}
+            <a
+            href="#popup:marquiz_68bc138ede46c100197a6379"
+            className="text-white text-sm font-bold py-2 px-3 rounded-full transition-all duration-300 bg-gradient-to-r from-[#FF6217] to-[#F59465] hover:shadow-lg hover:shadow-orange-500/30"
+            // className={styles.headerMenuButton}
+          >
+            Рассчитать
+          </a>
           </div>
 
           {/* Мобильная версия: Логотип слева, кнопка-бургер справа */}
@@ -133,9 +169,9 @@ export default function Navbar() {
           <hr className="border-gray-700 my-4" />
           <div className="flex flex-col gap-4 text-center">
             <a href="tel:88007079046" className="text-white">8 (800) 707-90-46</a>
-            <Link href="#calculate" className="bg-gradient-to-r from-[#FF6217] to-[#F59465] text-white font-bold py-3 px-6 rounded-full hover:shadow-lg transition-colors" onClick={toggleMobileMenu}>
+            <a href="#popup:marquiz_68bc138ede46c100197a6379" className="bg-gradient-to-r from-[#FF6217] to-[#F59465] text-white font-bold py-3 px-6 rounded-full hover:shadow-lg transition-colors" onClick={toggleMobileMenu}>
               Рассчитать
-            </Link>
+            </a>
           </div>
         </div>
       </div>

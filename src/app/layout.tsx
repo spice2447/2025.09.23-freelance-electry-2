@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { inter } from "@/fonts";
 import "./globals.css";
-// import { PopupContext } from "@/context/PopapContext";
-import Metrics from "@/components/Metrics"; // 1. Импортируем новый компонент
+import Metrics from "@/components/Metrics";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Metrics />
       </body>
     </html>

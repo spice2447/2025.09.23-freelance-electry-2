@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react"; // 1. Импортируем useState
 import Line from "../Line/Line";
 
 const Mediaps = [
@@ -26,6 +27,41 @@ const MediaList = () => {
 };
 
 export default function Footer() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [status, setStatus] = useState("idle"); // 'idle' | 'loading' | 'success' | 'error'
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Предотвращаем стандартное поведение формы
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setName(""); // Очищаем поля после успеха
+        setPhone("");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+    }
+  };
+
+  // Определяем текст для кнопки в зависимости от статуса
+  const getButtonValue = () => {
+    if (status === "loading") return "Отправка...";
+    if (status === "success") return "Отправлено!";
+    if (status === "error") return "Ошибка, попробуйте снова";
+    return "Оставить заявку";
+  };
   return (
     <footer className="px-4 py-8 pb-6 bg-[url('/footerBg.jpg')] bg-[50%] bg-[auto_102%]">
       <div className="flex flex-col gap-1.5 lg:max-w-[840px] m-auto">
@@ -34,11 +70,12 @@ export default function Footer() {
           <p className="text-[22px] lg:text-[32px] font-semibold text-center">
             Остались вопросы?
           </p>
-          <p className="text-[14] text-center opacity-50">
+          <p className="text-[14px] text-center opacity-50">
             Оставьте ваши контактные данные и мы на них ответим
           </p>
         </div>
-        <div className="flex flex-col gap-1.5 mt-6 lg:flex-row ">
+        {/* 4. Оборачиваем инпуты в тег <form> и добавляем onSubmit */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-1.5 mt-6 lg:flex-row ">
           <input
             className="text-black/60 border bg-[#F8F9F8] border-[#ebebeb] rounded-[24px] w-full h-[52px] p-4 text-[14px]"
             maxLength={256}
@@ -46,22 +83,30 @@ export default function Footer() {
             type="text"
             id="name-2"
             required
+            value={name} // 5. Связываем инпуты с состоянием
+            onChange={(e) => setName(e.target.value)}
+            disabled={status === 'loading'}
           />
           <input
             className="text-black/60 border bg-[#F8F9F8] border-[#ebebeb] rounded-[24px] w-full h-[52px] p-4 text-[14px]"
             maxLength={256}
             placeholder="+7"
-            type="number"
+            type="tel" // Лучше использовать type="tel" для телефонов
             id="phone"
             required
+            value={phone} // 5. Связываем инпуты с состоянием
+            onChange={(e) => setPhone(e.target.value)}
+            disabled={status === 'loading'}
           />
           <input
             type="submit"
-            data-wait="Отправка..."
-            className="w-full text-white bg-gradient-to-r from-[#2859e6] to-[#5279e8] rounded-[24px] h-[52px] p-4 font-medium text-[16px] hover:bg-gradient-to-r hover:from-[#ff6116] hover:to-[#f49364] transition-colors duration-200"
-            value="Оставить заявку"
+            className="w-full text-white bg-gradient-to-r from-[#2859e6] to-[#5279e8] rounded-[24px] h-[52px] p-4 font-medium text-[16px] hover:bg-gradient-to-r hover:from-[#ff6116] hover:to-[#f49364] transition-colors duration-200 disabled:opacity-50"
+            value={getButtonValue()} // 6. Динамически меняем текст
+            disabled={status === 'loading'}
           />
-        </div>
+        </form>
+        {status === 'success' && <p className="text-center text-green-400 mt-2">Спасибо! Мы скоро с вами свяжемся.</p>}
+        {status === 'error' && <p className="text-center text-red-400 mt-2">Произошла ошибка при отправке.</p>}
         <label className="flex items-start mt-3 text-[#F8F9F8] opacity-40 m-auto max-w-[400px]">
           <input
             type="checkbox"
