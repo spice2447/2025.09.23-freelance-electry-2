@@ -1,13 +1,10 @@
-// components/Navbar.tsx
-
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react'; // Изменено
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react'; // Добавили иконку ChevronDown
+import { Menu, X, ChevronDown } from 'lucide-react';
 
-// Обновленный компонент Dropdown с кастомными стилями и иконкой
 const NavDropdown = ({ title, children, className }: { title: string; children: React.ReactNode; className?: string }) => (
   <div className="relative group">
     <button className={`flex items-center gap-2 text-sm font-medium text-white/80 transition-colors hover:text-white ${className}`}>
@@ -29,38 +26,18 @@ const DropdownLink = ({ href, children }: { href: string; children: React.ReactN
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  
+  const calculateButtonRef = useRef<HTMLAnchorElement>(null);
 
-  // Данные для навигации
-  // const navLinks = {
-  //   drives: [
-  //     { href: "/house", label: "Для загородного дома" },
-  //     { href: "/", label: "Для квартиры" },
-  //     { href: "/", label: "Для дачи" },
-  //     { href: "/", label: "Автономные решения" },
-  //   ],
-  //   main: [
-  //     { href: "/features", label: "Характеристики" },
-  //     { href: "/catalog", label: "Каталог" },
-  //     { href: "/all-projects", label: "Наши проекты" },
-  //     { href: "/reviews", label: "Отзывы" },
-  //   ],
-  //   implementation: [
-  //     { href: "/company/oplata-i-dostavka", label: "Оплата и доставка" },
-  //     { href: "/guarantee", label: "Гарантии" },
-  //     { href: "/ibp", label: "Сравнение с ИБП" },
-  //     { href: "/generator", label: "Сравнение с генератором" },
-  //     { href: "/calculator", label: "Калькулятор" },
-  //   ],
-  //   company: [
-  //     { href: "/about-us", label: "О нас" },
-  //     { href: "/smi-o-nas", label: "СМИ о нас" },
-  //     { href: "/statii", label: "Статьи" },
-  //     { href: "/vacancies", label: "Вакансии" },
-  //     { href: "/agent", label: "Стать агентом" },
-  //   ],
-  // };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      calculateButtonRef.current?.click();
+    }, 5000); 
 
-    const navLinks = {
+    return () => clearTimeout(timer);
+  }, []); 
+
+  const navLinks = {
     drives: [
       { href: "https://voltsbattery.ru", label: "Для загородного дома" },
       { href: "https://voltsbattery.ru", label: "Для квартиры" },
@@ -91,7 +68,6 @@ export default function Navbar() {
 
   const logoUrl = "https://cdn.prod.website-files.com/6737524e57a558bf6c0d64ef/67375a170366040ede30c370_Vector%20logo.svg";
   
-  // Базовые классы для ссылок в "пилюлях"
   const pillLinkClass = "bg-white/10 rounded-full px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:text-white hover:bg-white/20  whitespace-nowrap";
 
   return (
@@ -101,7 +77,6 @@ export default function Navbar() {
       <nav className="relative max-w-[1920px] mx-auto px-6 sm:px-10 lg:px-16 py-4">
         <div className="flex items-center justify-between h-12">
           
-          {/* 1. Левая группа навигации (flex-1 для выравнивания) */}
           <div className="hidden lg:flex flex-1 items-center justify-start gap-[1vw]">
             <NavDropdown title="Накопители" className="bg-white/10 rounded-full px-[1vw] py-2 hover:bg-white/20 ">
               {navLinks.drives.map(link => <DropdownLink key={link.href} href={link.href}>{link.label}</DropdownLink>)}
@@ -111,14 +86,12 @@ export default function Navbar() {
             ))}
           </div>
           
-          {/* 2. Логотип по центру */}
           <div className="hidden lg:block">
             <Link href="/" className="flex-shrink-0">
               <Image src={logoUrl} alt="Volts Logo" width={100} height={24} priority />
             </Link>
           </div>
 
-          {/* 3. Правая группа навигации (flex-1 и justify-end) */}
           <div className="max-[1400px]:hidden min-[1400px]:flex flex-1 items-center justify-end gap-4">
             <NavDropdown title="Реализация" className="pb-1 border-b border-white/80 hover:border-white">
               {navLinks.implementation.map(link => <DropdownLink  key={link.href} href={link.href}>{link.label}</DropdownLink>)}
@@ -127,19 +100,15 @@ export default function Navbar() {
               {navLinks.company.map(link => <DropdownLink key={link.href} href={link.href}>{link.label}</DropdownLink>)}
             </NavDropdown>
             <a href="tel:88007079046" className="text-sm font-medium text-white/80 hover:text-white transition-colors whitespace-nowrap">8 (800) 707-90-46</a>
-            {/* <a href="#popup:marquiz_68bc138ede46c100197a6379" className="text-white text-sm font-bold py-2 px-3 rounded-full transition-all duration-300 bg-gradient-to-r from-[#FF6217] to-[#F59465] hover:shadow-lg hover:shadow-orange-500/30">
-              Рассчитать
-            </a> */}
             <a
-            href="#popup:marquiz_68bc138ede46c100197a6379"
-            className="text-white text-sm font-bold py-2 px-3 rounded-full transition-all duration-300 bg-gradient-to-r from-[#FF6217] to-[#F59465] hover:shadow-lg hover:shadow-orange-500/30"
-            // className={styles.headerMenuButton}
-          >
-            Рассчитать
-          </a>
+              ref={calculateButtonRef}
+              href="#popup:marquiz_68bc138ede46c100197a6379"
+              className="text-white text-sm font-bold py-2 px-3 rounded-full transition-all duration-300 bg-gradient-to-r from-[#FF6217] to-[#F59465] hover:shadow-lg hover:shadow-orange-500/30"
+            >
+              Рассчитать
+            </a>
           </div>
 
-          {/* Мобильная версия: Логотип слева, кнопка-бургер справа */}
           <div className="lg:hidden flex items-center justify-between w-full">
             <Link href="/" className="flex-shrink-0">
                 <Image src={logoUrl} alt="Volts Logo" width={100} height={24} priority />
@@ -151,9 +120,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Панель мобильного меню (без изменений) */}
       <div className={`fixed top-0 left-0 w-full h-dvh bg-gray-900/95 backdrop-blur-sm z-50 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:hidden`}>
-        {/* ...содержимое мобильного меню осталось прежним для простоты и удобства на мобильных... */}
         <div className="flex justify-between items-center p-6 border-b border-gray-700">
            <Link href="/" onClick={toggleMobileMenu}>
               <Image src={logoUrl} alt="Volts Logo" width={100} height={24} />
