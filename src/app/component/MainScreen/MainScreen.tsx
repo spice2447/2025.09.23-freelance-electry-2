@@ -56,9 +56,10 @@ const MainScreen = () => {
                 <h1 className="px-4 text-center text-[26px] font-medium leading-[1.15] text-white lg:px-0 lg:text-start lg:text-[52px]">
                   Ищете альтернативу генератору или ИБП?
                 </h1>
-                <button onClick={handleOpenPopup} className="h-[52px] flex justify-center items-center w-fit rounded-[24px] border-0 bg-gradient-to-r from-[#2859e6] to-[#5279e8] p-4 text-[16px] font-medium text-white transition-colors duration-200 hover:bg-gradient-to-r hover:from-[#ff6116] hover:to-[#f49364]">
+                <a href="#popup:marquiz_68bc138ede46c100197a6379" className="h-[52px] flex justify-center items-center w-fit rounded-[24px] border-0 bg-gradient-to-r from-[#2859e6] to-[#5279e8] p-4 text-[16px] font-medium text-white transition-colors duration-200 hover:bg-gradient-to-r hover:from-[#ff6116] hover:to-[#f49364]">
+                {/* <a href="#popup:marquiz_68bc138ede46c100197a6379" onClick={handleOpenPopup} className="h-[52px] flex justify-center items-center w-fit rounded-[24px] border-0 bg-gradient-to-r from-[#2859e6] to-[#5279e8] p-4 text-[16px] font-medium text-white transition-colors duration-200 hover:bg-gradient-to-r hover:from-[#ff6116] hover:to-[#f49364]"> */}
                   Заказать консультацию
-                </button>
+                </a>
               </div>
 
               <div className="z-20 mt-auto flex h-fit flex-col items-center justify-center gap-2 px-4 lg:flex-1 lg:flex-row lg:items-start lg:gap-4.5 lg:*:text-start">
